@@ -1,27 +1,12 @@
 var express = require('express');
 var router = express.Router();
+//引入数据库连接模块
+let conn =require("./conn")
 
-//引入mysql模块
-const  mysql=require('mysql');
-//数据库连接配置
-const conn=mysql.createConnection({
-    host     : 'localhost', //数据库主机名
-    user     : 'root',         //数据库账号
-    password : 'root',    //密码
-    database : 'hlsmms'      //使用哪个数据库
-});
-//打开数据库链接
-conn.connect(err=>{
-  if(err){
-    console.log("× 数据库链接失败！",err.message);
-  }else {
-    console.log("√ 数据库链接成功！")
-  }
-});
 //通用的跨域路由
 router.all("*",(req,res,next)=>{
     //res.header("Access-Control-Allow-Origin","*");
-    res.header("Access-Control-Allow-Origin"," http://172.16.4.241:8080");  //允许携带cookie证书的域名
+    res.header("Access-Control-Allow-Origin"," http://192.168.0.102:8080");  //允许携带cookie证书的域名 172.16.4.241:8080
     res.header("Access-Control-Allow-Credentials",true);  //值是一个布尔值，表示是否允许发送Cookie
     next(); //放行执行下面的路由
 });

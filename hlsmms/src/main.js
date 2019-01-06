@@ -12,6 +12,12 @@ Vue.prototype.axios=axios;
 import qs from 'qs'
 //挂载原型方便后期的vue实例使用
 Vue.prototype.qs=qs;
+
+//配置后端服务器的主机
+let serverApiHost="http://192.168.0.102:9090";
+Vue.prototype.apiHost=serverApiHost;
+
+
 //构造全局守卫
 router.beforeEach((to,from,next)=>{
   //alert('全局守卫')

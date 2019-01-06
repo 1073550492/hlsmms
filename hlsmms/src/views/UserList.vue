@@ -288,7 +288,7 @@ export default {
   background-color: #ccc !important;
 }
 .listbtn {
-  background-color: rgb(247, 33, 33) !important;
+  background-color: #e87272 !important;
 }
 .okbtn{
   background-color: #ccc !important;
